@@ -1,0 +1,20 @@
+{
+  "name": "challenge10",
+  "version": "1.0.0",
+  "description": "This is the HTML generator for the Team members in Node ",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  
+
+  },
+  "author": "Melissa Lycan",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
+  }
+}
