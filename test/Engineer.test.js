@@ -1,32 +1,28 @@
 const Engineer = require("../lib/engineer");
 const Employee = require("../lib/employee");
 
-// describe("Engineer", () => {
-describe("getGitHub", () => {
-  // Positive Tests
-  it("should add a new 'name' property to its 'Employee'object", () => {
-    // Arrange
-    const gitHubText = "MelissaLycan";
-    const github = new employee.github();
-
-    // Act
-    employee.getGitHub(gitHubText);
-
-    // Assert
-    expect(employee.github.length).toEqual(1);
-    expect(employee.github instanceof Employee).toEqual(true);
-    expect(employee.github.text).toEqual(gitHubText);
+//Describes engineer class
+describe("Engineer class", () => {
+  it("Tests for github name and role override", () => {
+    //Define
+    const engineer = new Engineer("Fred", "13", "fred@email.com", "gitFred90");
+    //Assert
+    expect(typeof engineer.github).toBe("string");
   });
+  it("should get github username", () => {
+    const engineer = new Engineer(
+      "Jerry",
+      "14",
+      "jerry@email.com",
+      "gitJerry90"
+    );
+    const github = engineer.github;
 
-  // Exception test //
-  it("should throw an error if not provided text", () => {
-    // Arrange
-    const employee = new employee.github();
-    const err = new Error("Expected parameter 'text' to be a non empty string");
-    //Define//
-    const cb = () => employee.getGitHub();
+    expect(engineer.github).toBe(github);
+  });
+  it("should set role to Engineer", () => {
+    const engineer = new Engineer("Tom", "15", "tom@email.com", "gitTom90");
 
-    // Assert //
-    expect(cb).toThrowError(err);
+    expect(engineer.getRole()).toBe("Engineer");
   });
 });

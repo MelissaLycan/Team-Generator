@@ -1,75 +1,41 @@
 const Employee = require("../lib/employee");
 
-describe("Employee", () => {
-  describe("Initialization", () => {
-    it("should create an 'Employee' object with a 'name' property set to an empty string when called with the 'new' keyword", () => {
-      // Arrange
-      const employee = new Employee();
-      // Assert
-      expect(employee).toEqual([]);
-    });
-  });
-});
+// describes the employee Class -  accepts (name, id, email)
+describe("Employee class", () => {
+  it("Tests for name, id, email", () => {
+    //Define
+    const employee = new Employee("Fred", "13", "fred@email.com");
+    //Assert
+    expect(typeof employee.getName()).toBe("string");
 
-describe("getName", () => {
-  // Positive Tests
-  it("should add a new 'name' property to its 'Employee'object", () => {
-    // Arrange
-    const nameText = "Melissa Lycan";
-    const name = new employee.name();
+    expect(typeof employee.getId()).toBe("string");
 
-    // Act
-    employee.getName(nameText);
+    expect(typeof employee.getEmail()).toBe("string");
+  }); //execute
+  it("should get name", () => {
+    const employee = new Employee("Jerry", "14", "jerry@email.com");
+    const { name } = employee;
 
-    // Assert
-    expect(employee.name.length).toEqual(1);
-    expect(employee.name instanceof Employee).toEqual(true);
-    expect(employee.name.text).toEqual(nameText);
+    expect(employee.getName()).toBe(name);
   });
 
-  // Exception test //
-  it("should throw an error if not provided text", () => {
-    // Arrange
-    const employee = new employee.name();
-    const err = new Error("Expected parameter 'text' to be a non empty string");
-    //Define//
-    const cb = () => employee.getName();
+  it("should get ID", () => {
+    const employee = new Employee("Tom", "15", "tom@email.com");
+    const { id } = employee;
 
-    // Assert //
-    expect(cb).toThrowError(err);
+    expect(employee.getId()).toBe(id);
   });
-});
 
-describe("getId", () => {
-  // Positive test
-  it("should return the employee id element in the Employee Object", () => {
-    // Arrange
-    const id = new employee.id("");
-    const text1 = "4321";
-    let getId;
+  it("should get email", () => {
+    const employee = new Employee("Angel", "16", "angel@email.com");
+    const { email } = employee;
 
-    // Act
-    employee.getId(text1);
-
-    // Assert
-    expect(employee.id instanceof Employee).toEqual(true);
-    expect(employee.id).toEqual(text1);
+    expect(employee.getEmail()).toBe(email);
   });
-});
 
-describe("getEmail", () => {
-  // Positive test
-  it("should return the employee id element in the Employee Object", () => {
-    // Arrange
-    const id = new employee.email("");
-    const text1 = "melissamlycan@gmail.com";
-    let getEmail;
+  it("should get role", () => {
+    const employee = new Employee("Eduardo", "9", "Eduardo@email.com");
 
-    // Act
-    employee.getEmail(text1);
-
-    // Assert
-    expect(employee.email instanceof Employee).toEqual(true);
-    expect(employee.email).toEqual(text1);
+    expect(employee.getRole()).toBe("Employee");
   });
 });

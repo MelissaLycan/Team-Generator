@@ -38,7 +38,7 @@ Testing was a challenge and eventually we changed the script call. Ensure jest a
 
 ## DEMO
 
-[DEMO: Click Here](./image/Screen-Recording)
+[DEMO: Click Here](./images/Screen-Recording)
 
 ## License
 

@@ -1,15 +1,26 @@
+header {
+    min-width: 100%;
+    background-color: rgb(28, 172, 216);
+    color: white;
+}
+
+.container {
+    background-color: rgb(209, 244, 248);
+    color: black;
+    border: solid 2px black;
+}
+
 .card {
     color: black;
-    background-color: antiquewhite;
     border: solid 2px black;
     border-radius: 15px;
     min-width: 250px;
-    min-height: 350px;
+    min-height: 175px;
 }
 
 ul {
     font-size: 20 px;
-    text-decoration: underline;
+    text-decoration: none;
     list-style-type: none;
 }
 

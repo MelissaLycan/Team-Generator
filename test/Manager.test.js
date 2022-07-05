@@ -1,32 +1,20 @@
 const Manager = require("../lib/manager");
-const Employee = require("../lib/employee");
 
-// describe("Manager", () => {
-describe("getOfficeNumber", () => {
-  // Positive Tests
-  it("should add a new 'name' property to its 'Employee'object", () => {
-    // Arrange
-    const phoneText = "(303)945-0182";
-    const officeNumber = new employee.officeNumber();
+describe("Manager class", () => {
+  it("Tests for office number and role override", () => {
+    const manager = new Manager("Jerry", "13", "jerry@email.com", "101");
 
-    // Act
-    employee.getOfficeNumber(phoneText);
-
-    // Assert
-    expect(employee.officeNumber.length).toEqual(1);
-    expect(employee.officeNumber instanceof Employee).toEqual(true);
-    expect(employee.officeNumber.text).toEqual(phoneText);
+    expect(typeof manager.officeNumber).toBe("string");
   });
+  it("should get office number", () => {
+    const manager = new Manager("Jerry", "13", "jerry@email.com", "101");
+    const office = manager.officeNumber;
 
-  // Exception test //
-  it("should throw an error if not provided text", () => {
-    // Arrange
-    const employee = new employee.officeNumber();
-    const err = new Error("Expected parameter 'text' to be a non empty string");
-    //Define//
-    const cb = () => employee.getOfficeNumber();
+    expect(manager.officeNumber).toBe(office);
+  });
+  it("should set role to Manager", () => {
+    const manager = new Manager("Jerry", "13", "jerry@email.com", "101");
 
-    // Assert //
-    expect(cb).toThrowError(err);
+    expect(manager.getRole()).toBe("Manager");
   });
 });
